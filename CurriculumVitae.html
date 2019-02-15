@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>TarekSherif CV</title>
+
+    <!-- Required Stylesheets -->
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Required scripts -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+  </head>
+  <body>
+
+        <div id="CV" class="container">
+                <div class="row">
+                  <div class="col-sm-3">
+                      <div class="row">
+                            <!-- <div :class="[classNameA, classNameB]"></div> -->
+                            <div class="col-sm-9">
+                                <img src="" alt="" srcset="">
+                                <section id="Info">
+                                    <h3>
+                                        <span class="RedColor" >{</span> 
+                                            <span >Info</span> 
+                                       <span class="RedColor" >}</span> 
+                                        </h3>
+                                       <div class="container" v-for="Info in Informations"  >
+                                               <div class="row">
+                                                      <b> {{ Info.Title }}</b>
+                                               </div>
+                                               <div class="row">
+                                                       {{ Info.Value }}
+                                               </div>
+                                       </div>
+                                </section>
+                                <section id="Skills">
+                                    <h3>
+                                        <span class="RedColor">{</span> 
+                                            <span >Skills</span> 
+                                       <span class="RedColor">}</span> 
+                                    </h3>
+                                       <template v-for="Skill in Skills">
+                                           
+                                                <h6> {{ Skill.Title }}</h6>
+                                                <b-progress :value="Skill.Value" :max="100" :variant="Skill.Color" show-value class="mb-3"></b-progress>
+                                           
+                                        </template>    
+                                      
+                                </section>
+                              
+                            </div>
+                            <div class="col-sm-3 line">
+                                <div v-for="index in 50" class="line-number" >
+                                    {{ index }} 
+                                </div>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-9">
+                      <h1>
+                            <span class="RedColor">{</span>
+                                {{Name}}
+                            <span class="RedColor">}</span>
+                      </h1>
+
+                        <span class="RedColor" >Experience</span> {
+                            <div v-for="Ex in Experience" class="Experience " >
+                                    <span class="RedColor">{{Ex.Title}}</span> At <span class="RedColor">{{Ex.Company}}</span>(<span>Experience</span>)
+                                    {
+                                 <div class="container Experience-info">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                $from
+                                            </div>
+                                            <div class="col-sm-6">
+                                                ={{Ex.From}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                $to
+                                            </div>
+                                            <div class="col-sm-6">
+                                                ={{Ex.To}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                $Description
+                                            </div>
+                                            <div class="col-sm-6">
+                                                ={{Ex.Description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+                            </div>
+
+                        }
+                  </div>
+                </div>
+        </div>
+
+    <!-- Start running your app -->
+    <script>
+            var app = new Vue({
+            el: '#CV',
+            data: {
+                Name :"Tarek Muhammad Abd El-Maged Sherif",
+                Experience: [
+                    {
+                        "Title":"Web developer",
+                        "Company":" Al-Riyadh Newspaper",
+                        "Location":"Cairo Office",
+                        "From":"Apr.2009",
+                        "To":"present",
+                        "Description":"Developing and maintaining the official website of the newspaper using different web technologies such as Asp.net (MVC) C#, PHP, Laravel.",
+                    },
+                    {
+                        "Title":".NET Developer",
+                        "Company":"ELAMIR (Procter &Gamble)",
+                        "Location":"Cairo",
+                        "From":"Mar.2008",
+                        "To":"Apr.2009",
+                        "Description":"Developing different Windows applications facilitating some internal processes such as attendance, tracking and recording fixed assets, etc.",
+                    },
+                    {
+                        "Title":".NET Developer",
+                        "Company":"Central Agency for Public Mobilization and Statistics [CAPMAS]",
+                        "Location":"Cairo",
+                        "From":"Aug.2007",
+                        "To":"Mar.2008",
+                        "Description":"Developing and maintaining different Census-related applications.   ",
+                    },
+                    {
+                        "Title":".NET Developer ",
+                        "Company":"Arabian group for computer [AGC]",
+                        "Location":"Cairo",
+                        "From":"Apr.2006",
+                        "To":"May.2007",
+                        "Description":"Developing different applications for different customers using several technologies such as ORACLE, SQLSERVER, ASP.NET, etc.",
+                    },
+                    {
+                        "Title":"Graduation project ",
+                        "Company":"The ADVANCED ACADEMY ",
+                        "Location":"Giza",
+                        "From":"Apr.2006",
+                        "To":"May.2007",
+                        "Description":"Developing a Website With for managing graduation projects using ASP.NET,JAVA SCRIPT. Also, developing SQL scripts generator to admin the panel.",
+                    },
+                ],
+                // 'success','info', 'warning', 'danger','primary','secondary','dark'
+                Skills: [
+                    {
+                        "Title":"PHP",
+                        "Color":"primary",
+                        "Value":85
+                    },
+                    {
+                        "Title":"MYSQL",
+                        "Color":"success",
+                        "Value":90
+                    },
+                    {
+                        "Title":"Laravel",
+                        "Color":"warning",
+                        "Value":90
+                    },
+                    {
+                        "Title":".Net",
+                        "Color":"danger",
+                        "Value":90
+                    },
+                    {
+                        "Title":"JavaScript",
+                        "Color":"info",
+                        "Value":85
+                    },
+                ] ,
+                Projects: [
+                    {
+                        "Title":"PHP",
+                        "URL":"90",
+                        "Logo":"",
+                        "From":"Apr.2006",
+                        "To":"May.2007",
+                        "Description":"",
+                    },
+       
+                ] ,
+                Informations :[
+                    {
+                        "Title":"BDate",
+                        "Value":"10/02/1986",
+                        "Icon":""},
+                        {
+                        "Title":"MaritalStatus",
+                        "Value":"Single",
+                        "Icon":""},
+                        {
+                        "Title":"MilitaryStatus",
+                        "Value":"Exemption",
+                        "Icon":""   }
+            ], 
+                Connection:[
+                          {
+                            "Icon":"" ,
+                            "Value":"linkedin",
+                          },
+                          {
+                            "Icon":"" ,
+                            "Value":"github",
+                          },
+                          {
+                            "Icon":"Phone" ,
+                            "Value":"(202)35858683 • (002)(011)(5500920)",
+                          },
+                          {
+                            "Icon":"E-mail" ,
+                            "Value":"eng.tarek.sherif@Gmail.com",
+                          },  
+                          {
+                            "Icon":"Address" ,
+                            "Value":"El-Haram St., Giza , Egypt",
+                          },
+                   
+                   ]
+            }
+            })
+        </script>
+         
+        </body>
+    </html>

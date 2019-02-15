@@ -1,0 +1,20 @@
+.line{
+ background: #1E1E1E;
+}
+.line-number{
+    color: #858585;
+    text-align: center;
+}
+.line-number:hover{
+    color: #BBC6BB;
+}
+
+.Experience{
+    margin-left: 40px;
+}
+.Experience-info{
+    margin-left: 40px;
+}
+.RedColor{
+    color: #dc3545
+}
